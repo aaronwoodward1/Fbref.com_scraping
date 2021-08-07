@@ -40,6 +40,26 @@ big5_player_gca_df = big5_player_gca_stats[0]
 big5_player_def_df = big5_player_def_stats[0]
 big5_player_poss_df = big5_player_poss_stats[0]
 
+#Cleaning the labels for certain dataframes:
+big5_player_stand_df = big5_player_stand_df.rename(columns={'Gls.1':'Gls/90','Ast.1':'Ast/90',
+                                                            'G+A':'G+A/90', 'G-PK.1':'G-PK/90',
+                                                            'G+A-PK':'G+A-PK/90','xG.1':'xG/90',
+                                                            'xA.1':'xA/90','xG+xA':'xG+xA/90',
+                                                            'npxG.1':'npxG/90','npxG+xA.1':'npxG+xA/90'})
+big5_player_pass_df = big5_player_pass_df.rename(columns={'Cmp.1':'Cmp_short', 'Att.1':'Att_short','Cmp%.1':'Cmp%_short',
+                                                          'Cmp.2':'Cmp_med', 'Att.2':'Att_med','Cmp%.2':'Cmp%_med',
+                                                          'Cmp.3':'Cmp_long', 'Att.3':'Att_long','Cmp%.3':'Cmp%_long'})
+big5_player_gk_df = nonbig5_player_gk_df.rename(columns={'Save%.1':'Save%_PK'})
+big5_player_ptype_df = big5_player_ptype_df.rename(columns={'In':'CK_In','Out':'CK_Out','Str':'CK_Str'})                                                            
+big5_player_advgk_df = big5_player_advgk_df.rename(columns={'/90':'PSxG-GA/90','Cmp%':'Cmp_pct', 'Launch%':'Launch_pct_pass',
+                                                            'Att.1':'Att_pass','Launch%.1':'GK_launch_pct',
+                                                            'Att.2':'GKA', 'Launch%.1':'GK_launch_pct', 'AvgLen.1':'GK_Avglen',
+                                                            'Opp':'Cross_opp','Stp':'Cross_opp_stop', 'Stp%':'Cross_opp_stop_pct',
+                                                            '#OPA':'Def_OPA','#OPA/90':'Def_OPA/90','AvgDist':'Def_OPA_AvgDist'})
+big5_player_gca_df = big5_player_gca_df.rename(columns={'PassLive':'SCA_PassLive','PassDead':'SCA_PassDead',
+                                                        'Drib':'SCA_Drib','Sh':'SCA_Sh','Fld':'SCA_Fld','Def':'SCA_Def',
+                                                        'PassLive.1':'GCA_PassLive','PassDead.1':'GCA_PassDead',
+                                                        'Drib.1':'GCA_Drib','Sh.1':'GCA_Sh','Fld.1':'GCA_Fld','Def.1':'GCA_Def'})
 
 
 
