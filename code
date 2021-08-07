@@ -1,0 +1,48 @@
+#Fbref.com has aggregated player performance data for the Big 5 Leagues. The data in fbref.com is organized by category: standard stats (stand), goalkeeping (gk), advanced goalkeeping (advgk),
+#shooting (shoot), passing (pass), pass types (ptype), goal and shot creation (gca), defensive actions (def), possession (poss), miscellaneous stats (misc)(i.e., yellow and red cards). The data is presented in tables on
+#Fbref.com, but attempting to scrape the data using beautiful soup, might be challenging. Despite this challenge, we're still able to "scrape" the data using the url's that
+#are given to the tables to for downloading as .xlsx and .csv files. 
+
+
+#URL's:
+big5_player_stand_url = "https://widgets.sports-reference.com/wg.fcgi?css=1&site=fb&url=%2Fen%2Fcomps%2FBig5%2Fstats%2Fplayers%2FBig-5-European-Leagues-Stats&div=div_stats_standard"
+big5_player_gk_url = "https://widgets.sports-reference.com/wg.fcgi?css=1&site=fb&url=%2Fen%2Fcomps%2FBig5%2Fkeepers%2Fplayers%2FBig-5-European-Leagues-Stats&div=div_stats_keeper"
+big5_player_advgk_url = "https://widgets.sports-reference.com/wg.fcgi?css=1&site=fb&url=%2Fen%2Fcomps%2FBig5%2Fkeepersadv%2Fplayers%2FBig-5-European-Leagues-Stats&div=div_stats_keeper_adv"
+big5_player_shoot_url = "https://widgets.sports-reference.com/wg.fcgi?css=1&site=fb&url=%2Fen%2Fcomps%2FBig5%2Fshooting%2Fplayers%2FBig-5-European-Leagues-Stats&div=div_stats_shooting"
+big5_player_pass_url = "https://widgets.sports-reference.com/wg.fcgi?css=1&site=fb&url=%2Fen%2Fcomps%2FBig5%2Fpassing%2Fplayers%2FBig-5-European-Leagues-Stats&div=div_stats_passing"
+big5_player_gca_url = "https://widgets.sports-reference.com/wg.fcgi?css=1&site=fb&url=%2Fen%2Fcomps%2FBig5%2Fgca%2Fplayers%2FBig-5-European-Leagues-Stats&div=div_stats_gca"
+big5_player_def_url = "https://widgets.sports-reference.com/wg.fcgi?css=1&site=fb&url=%2Fen%2Fcomps%2FBig5%2Fdefense%2Fplayers%2FBig-5-European-Leagues-Stats&div=div_stats_defense"
+big5_player_poss_url = "https://widgets.sports-reference.com/wg.fcgi?css=1&site=fb&url=%2Fen%2Fcomps%2FBig5%2Fpossession%2Fplayers%2FBig-5-European-Leagues-Stats&div=div_stats_possession"
+big5_player_misc_url = "https://widgets.sports-reference.com/wg.fcgi?css=1&site=fb&url=%2Fen%2Fcomps%2FBig5%2Fmisc%2Fplayers%2FBig-5-European-Leagues-Stats&div=div_stats_misc"
+
+#Importing packages
+import pandas as pd
+import numpy as np
+
+#Using pandas to read the url's and create dataframes by stat category:
+big5_player_stand_stats = pd.read_html(big5_player_stand_url, header=1)
+big5_player_gk_stats = pd.read_html(big5_player_gk_url, header=1)
+big5_player_advgk_stats = pd.read_html(big5_player_advgk_url, header=1)
+big5_player_shoot_stats = pd.read_html(big5_player_shoot_url, header=1)
+big5_player_pass_stats = pd.read_html(big5_player_pass_url, header=1)
+big5_player_ptype_stats = pd.read_html(big5_player_ptype_url, header=1)
+big5_player_gca_stats = pd.read_html(big5_player_gca_url, header=1)
+big5_player_def_stats = pd.read_html(big5_player_def_url, header=1)
+big5_player_poss_stats = pd.read_html(big5_player_poss_url, header=1)
+
+big5_player_stand_df = big5_player_stand_stats[0]
+big5_player_gk_df = big5_player_gk_stats[0]
+big5_player_advgk_df = big5_player_advgk_stats[0]
+big5_player_shoot_df = big5_player_shoot_stats[0]
+big5_player_pass_df = big5_player_pass_stats[0]
+big5_player_ptype_df = big5_player_ptype_stats[0]
+big5_player_gca_df = big5_player_gca_stats[0]
+big5_player_def_df = big5_player_def_stats[0]
+big5_player_poss_df = big5_player_poss_stats[0]
+
+
+
+
+
+
+
